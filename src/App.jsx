@@ -1,4 +1,4 @@
-import { Redirect, Route, Router, Switch } from 'react-router';
+import { Redirect, Route, Router, Switch } from 'react-router-dom';
 import './App.css';
 
 function App() {
