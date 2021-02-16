@@ -40,7 +40,7 @@ export function AnimalDetails() {
 
     return (
         <main>
-            
+            <p>dette er et dyr</p>
         </main>
     )
 }
