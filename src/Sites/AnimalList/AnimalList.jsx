@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, Route, Switch, useParams, useRouteMatch } from "react-router-dom";
 import { doFetch } from '../../Helpers/doFetch';
-import { AnimalDetails } from "../AnimalDetails/AnimalDetails";
+import Style from './AnimalList.module.scss';
 
 export function AnimalList() {
 
@@ -15,6 +15,9 @@ export function AnimalList() {
               id
             }
             name
+            image {
+                url
+            }
           }
         }
       }`
@@ -34,10 +37,18 @@ export function AnimalList() {
 
 
     return (
-        <main>
+        <main className={Style.mainContainer}>
             {listOfAnimals && listOfAnimals.map((item, i) => {
                 return ( 
-                    <Link key={item.sys.id} to={`${url}/${item.sys.id}`}><article>{item.name}</article></Link>
+                    <Link key={item.sys.id} to={`${url}/${item.sys.id}`}>
+                        <article>
+                            <img src={item.image.url} alt=""/>
+                            <header>
+                                <h2>{item.name}</h2>
+                                <p>- se mere -</p>
+                            </header>
+                        </article>
+                    </Link>
                 )
             })}
         </main>
