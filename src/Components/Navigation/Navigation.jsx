@@ -1,11 +1,18 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Style from './Navigation.module.scss';
 
 export function Navigation() {
 
+    const [isActive, setActive] = useState(false);
+
+    const handleToggle = () => {
+        setActive(!isActive);
+    }
+
     return (
         <nav className={Style.pageNavigation}>
-            <div className={Style.burgerMenu}>
+            <div className={isActive ? Style.burgerMenuActive : Style.burgerMenu} onClick={handleToggle}>
                 <div className={Style.burgerMenuLine}></div>
                 <div className={Style.burgerMenuLine}></div>
                 <div className={Style.burgerMenuLine}></div>

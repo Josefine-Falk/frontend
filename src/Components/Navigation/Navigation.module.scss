@@ -25,6 +25,23 @@
         }
     }
 
+    .burgerMenuActive {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: 40px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .burgerMenuLine {
+            width: 100%;
+            height: 12%;
+            background-color: yellow;
+        }
+    }
+
     h2 {
         position: absolute;
         left: 20px;
