@@ -5,7 +5,7 @@ export function Footer() {
     return (
         <footer id={style.container}>
             <div>
-                <p>Footer</p>
+                <p>Lavet af Gruppe A.</p>
             </div>
         </footer>
     )

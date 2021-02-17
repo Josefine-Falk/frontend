@@ -7,8 +7,8 @@ export function Frontpage() {
         <main id={style.container}>
             <div>
                 <img src={logo} alt=""/>
-                <p>Lidt tekst</p>
-                <button>knap</button>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique augue eget mi iaculis aliquet.</p>
+                <a href="/Dyrene">Se dyr</a>
             </div>
         </main>
     )

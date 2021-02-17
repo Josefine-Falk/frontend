@@ -17,5 +17,19 @@
         img {
             max-width: 90%;
         }
+
+        p {
+            margin: 1rem 0;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            background-color: #303E2F;
+            padding: .75rem 1.25rem;
+            border: 1px solid;
+        }
     }
 }
