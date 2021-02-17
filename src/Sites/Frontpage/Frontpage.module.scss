@@ -1,0 +1,14 @@
+#container {
+    min-height: 85vh;
+    background-image: url("/Assets/img/amazon-papegoeje.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+
+    div {
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
