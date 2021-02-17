@@ -32,7 +32,6 @@ export function AnimalList() {
 
     useEffect(() => {
         getList();
-        console.log(listOfAnimals);
     }, [])
 
 

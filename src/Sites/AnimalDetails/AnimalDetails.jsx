@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouteMatch } from "react-router";
-import { Factsheets } from "../../Components/Navigation/Factsheets/Factsheets";
+import { Factsheets } from "../../Components/Factsheets/Factsheets";
 import { doFetch } from "../../Helpers/doFetch";
 
 export function AnimalDetails() {
