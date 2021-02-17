@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useRouteMatch } from "react-router"
+import { useParams, useRouteMatch } from "react-router";
 import { Factsheets } from "../../Components/Navigation/Factsheets/Factsheets";
 import { doFetch } from "../../Helpers/doFetch";
 
