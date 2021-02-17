@@ -9,6 +9,7 @@ function App() {
 
   return (
     <Router>
+
       <Switch>
         <Route exact path="/Forside">
           <Navigation />
@@ -21,7 +22,8 @@ function App() {
         </Route>
 
         <Route exact path={`/Dyrene/:animalId`}>
-            <AnimalDetails />
+          <Navigation />
+          <AnimalDetails />
         </Route>
 
         <Route exact path="/Kontakt">
