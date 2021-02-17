@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouteMatch } from "react-router"
+import { Factsheets } from "../../Components/Navigation/Factsheets/Factsheets";
 import { doFetch } from "../../Helpers/doFetch";
 
 export function AnimalDetails() {
@@ -19,6 +20,9 @@ export function AnimalDetails() {
               id
             }
             name
+            image{
+              url
+            }
             factSheet {
               scientificName
             }
@@ -31,7 +35,7 @@ export function AnimalDetails() {
 
         let response = await doFetch(url, query);
         
-        setAnimalDetails(response.data.animalsCollection.items);
+        setAnimalDetails(response.data.animalsCollection.items[0]);
     }
 
     useEffect(() => {
@@ -40,7 +44,14 @@ export function AnimalDetails() {
 
     return (
         <main>
-            <p>dette er et dyr</p>
+          {animalDetails.name ?
+          <section>
+            <header>
+              <h2>{animalDetails.name}</h2>
+              <img src={animalDetails.image.url} />
+            </header>
+            <Factsheets/>
+          </section> : <p>Loading</p>}
         </main>
     )
 }
