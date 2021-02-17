@@ -14,7 +14,7 @@ export function Factsheets() {
     const query = `{
         animalsCollection(where: { sys: { id_in: "${animalId}"} }) {
             items {
-                sys {
+                sys s{
                     id
                 }
                 name
