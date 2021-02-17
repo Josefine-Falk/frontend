@@ -4,10 +4,12 @@ import { Navigation } from './Components/Navigation/Navigation';
 import { AnimalDetails } from './Sites/AnimalDetails/AnimalDetails';
 import { AnimalList } from './Sites/AnimalList/AnimalList';
 import { Frontpage } from './Sites/Frontpage/Frontpage';
+import { Footer } from './Sites/Footer/Footer'
 
 function App() {
 
   return (
+    <>
     <Router>
 
       <Switch>
@@ -39,6 +41,9 @@ function App() {
         </Route>
       </Switch>
     </Router>
+
+    <Footer />
+    </>
   );
 }
 

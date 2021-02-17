@@ -8,6 +8,7 @@ export function Frontpage() {
             <div>
                 <img src={logo} alt=""/>
                 <p>Lidt tekst</p>
+                <button>knap</button>
             </div>
         </main>
     )
