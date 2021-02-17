@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouteMatch } from "react-router";
 import { Factsheets } from "../../Components/Factsheets/Factsheets";
 import { doFetch } from "../../Helpers/doFetch";
+import Style from './AnimalDetails.module.scss';
 
 export function AnimalDetails() {
 
@@ -43,7 +44,7 @@ export function AnimalDetails() {
     }, [])
 
     return (
-        <main>
+        <main className={Style.mainContainer}>
           {animalDetails.name ?
           <section>
             <header>

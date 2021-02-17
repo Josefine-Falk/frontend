@@ -1,0 +1,36 @@
+.factsheet {
+    width: 100%;
+    height: fit-content;
+    background-color: #354B33;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        width: 100%;
+        height: 8.5vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: white;
+
+        h3 {
+            margin-left: 40px;
+        }
+
+        p {
+            margin-right: 40px;
+        }
+    }
+
+    .factContainer {
+        width: 100%;
+        height: fit-content;
+        color: #dfdfdf;
+        padding: 0 40px;
+
+        div {
+            margin-bottom: 20px;
+            word-wrap: break-word;
+        }
+    }
+}

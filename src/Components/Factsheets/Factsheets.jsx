@@ -1,14 +1,20 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router"
-import { doFetch } from "../../Helpers/doFetch"
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { doFetch } from "../../Helpers/doFetch";
+import Style from './Factsheet.module.scss';
 
 export function Factsheets() {
     let {animalId} = useParams();
-    const [factsheet, setFactsheet] = useState([])
-    const [isActive, setActive] = useState(false)
+    const [factsheet, setFactsheet] = useState([]);
+    const [isActive, setActive] = useState(false);
+    const [isClicked, setClicked] = useState(false);
 
     const handleToggle = () => {
-        setActive(!isActive)
+        setActive(!isActive);
+    };
+
+    const handleFacesheetBtn = () => {
+        setClicked(!isClicked);
     }
 
     const query = `{
@@ -43,18 +49,22 @@ export function Factsheets() {
     }`
 
       const getFactsheets = async () => {
-            let url = 'https://graphql.contentful.com/content/v1/spaces/6jz8r9ndp7ne/'
-            let response = await doFetch(url, query)
-            setFactsheet(response.data.animalsCollection.items[0].factSheet)
+            let url = 'https://graphql.contentful.com/content/v1/spaces/6jz8r9ndp7ne/';
+            let response = await doFetch(url, query);
+            setFactsheet(response.data.animalsCollection.items[0].factSheet);
       }
       useEffect(()=> {
-        getFactsheets()
-      }, [])
+        getFactsheets();
+      }, []);
+
     return(
-        <article onClick={handleToggle}>
-            <h3>Fakta</h3>
+        <article onClick={handleToggle} className={Style.factsheet}>
+            <header className={Style.header} onClick={handleFacesheetBtn}>
+                <h3>Fakta</h3>
+                {!isClicked ? <p>+</p> : <p>-</p>}
+            </header>
             {isActive ? 
-                <div>
+                <div className={Style.factContainer}>
                     {factsheet.scientificName ? <div>
                         <h4>Videnskabeligt navn</h4>
                         <p>{factsheet.scientificName}</p>
