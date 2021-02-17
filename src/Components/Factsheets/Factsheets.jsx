@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { doFetch } from "../../../Helpers/doFetch"
+import { doFetch } from "../../Helpers/doFetch"
 
 export function Factsheets() {
     let {animalId} = useParams();

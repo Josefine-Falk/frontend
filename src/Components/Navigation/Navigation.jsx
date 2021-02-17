@@ -1,30 +1,22 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 import Style from './Navigation.module.scss';
 
 export function Navigation() {
+    let { animalId } = useParams();
 
-    const [isActive, setActive] = useState(false);
+    let history = useHistory();
 
-    const handleToggle = () => {
-        setActive(!isActive);
+    const handleClick = () => {
+        history.goBack();
     }
 
     return (
         <nav className={Style.pageNavigation}>
-            <div className={isActive ? Style.burgerMenuActive : Style.burgerMenu} onClick={handleToggle}>
-                <div className={Style.burgerMenuLine}></div>
-                <div className={Style.burgerMenuLine}></div>
-                <div className={Style.burgerMenuLine}></div>
-            </div>
-
             <h2>Dyrepasser Intra</h2>
 
-            <ul>
-                <li><Link className={Style.navigationLinks} to="/Forside">Forside</Link></li>
-                <li><Link className={Style.navigationLinks} to="/Dyrene">Dyrene</Link></li>
-                <li><Link className={Style.navigationLinks} to="/Kontakt">Kontakt</Link></li>
-            </ul>
+            {animalId ? <p className={Style.backArrow} onClick={handleClick}>→</p> : <BurgerMenu />}
         </nav>
     )
 }
