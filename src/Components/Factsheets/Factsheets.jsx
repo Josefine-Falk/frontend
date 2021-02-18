@@ -38,7 +38,6 @@ export function Factsheets() {
                     food
                     biology
                     additionalInformation
-                    sources
                 }
             }
         }

@@ -29,8 +29,7 @@ export function Feedingplan() {
                         important
                         amountPerDay
                         dailyFeeding
-                        sources
-                     }
+                    }
                 }
             }
         }`

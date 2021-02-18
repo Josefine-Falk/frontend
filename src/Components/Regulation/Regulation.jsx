@@ -32,7 +32,6 @@ export function Regulation() {
                         enrichment
                         traning
                         registration
-                        sources
                       }
                 }
             }
