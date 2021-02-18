@@ -14,7 +14,7 @@ export function Navigation() {
 
     return (
         <nav className={Style.pageNavigation}>
-            <h2>Dyrepasser Intra</h2>
+            <h2><a href="/Forside">Dyrepasser Intra</a></h2>
 
             {animalId ? <p className={Style.backArrow} onClick={handleClick}>→</p> : <BurgerMenu />}
         </nav>
