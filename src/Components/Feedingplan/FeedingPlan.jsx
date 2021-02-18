@@ -29,6 +29,7 @@ export function Feedingplan() {
                         important
                         amountPerDay
                         dailyFeeding
+                        sources
                     }
                 }
             }
@@ -95,7 +96,14 @@ export function Feedingplan() {
 
                 {feedingplan.sources ? <div>
                         <h4>Kilder</h4>
-                        <p>{feedingplan.sources}</p>
+                        {feedingplan.sources.map(source => {
+                            return (
+                                <>
+                                <a href={source} target="_blank">{source}</a>
+                                <br />
+                                </>
+                            )
+                        })}
                     </div> : null}
 
             </div> : null}

@@ -38,6 +38,7 @@ export function Factsheets() {
                     food
                     biology
                     additionalInformation
+                    sources
                 }
             }
         }
@@ -142,7 +143,14 @@ export function Factsheets() {
 
                     {factsheet.sources ? <div>
                         <h4>Kilder</h4>
-                        <p>{factsheet.sources}</p>
+                        {factsheet.sources.map(source => {
+                            return (
+                                <>
+                                <a href={source} target="_blank">{source}</a>
+                                <br />
+                                </>
+                            )
+                        })}
                     </div> : null}
                     
                 </div>  : null}

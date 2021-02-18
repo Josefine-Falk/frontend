@@ -32,6 +32,7 @@ export function Regulation() {
                         enrichment
                         traning
                         registration
+                        sources
                       }
                 }
             }
@@ -113,7 +114,14 @@ export function Regulation() {
 
                     {regulation.sources ? <div>
                         <h4>Kilder</h4>
-                        <p>{regulation.sources}</p>
+                        {regulation.sources.map(source => {
+                            return (
+                                <>
+                                <a href={source} target="_blank">{source}</a>
+                                <br />
+                                </>
+                            )
+                        })}
                     </div> : null}
                 </div> :null}
             </article>
