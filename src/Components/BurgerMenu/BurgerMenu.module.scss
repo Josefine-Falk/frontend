@@ -30,6 +30,7 @@
         height: 12%;
         display: none;
         background-color: white;
+        transition: .2s ease-in-out;
 
         &:first-child {
             display: flex;

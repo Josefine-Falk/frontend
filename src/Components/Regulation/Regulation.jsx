@@ -19,6 +19,15 @@ export function Regulation(props) {
             setFeedingplanActive(false);
         }
 
+        const jumpTo = () => {
+            window.location.href = '#regulation';
+        }
+
+        const wrapperFunction = () => {
+            handleToggle();
+            jumpTo();
+        };
+
         const query = `{
             animalsCollection(where: { sys: { id_in: "${animalId}"} }) {
                 items {
@@ -56,7 +65,7 @@ export function Regulation(props) {
         return(
 
             <article className={Style.regulation}>
-                <header onClick={handleToggle} className={Style.header}>
+                <header id="regulation" onClick={wrapperFunction} className={Style.header}>
                     <h3>Forskrifter</h3>
                     {!isRegulationActive ? <p>+</p> : <p>-</p>}
                 </header>

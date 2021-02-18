@@ -19,6 +19,15 @@ export function Feedingplan(props) {
             setRegulationActive(false);
         }
 
+        const jumpTo = () => {
+            window.location.href = '#feedingplan';
+        };
+
+        const wrapperFunction = () => {
+            handleToggle();
+            jumpTo();
+        };
+
         const query = `{
             animalsCollection(where: { sys: { id_in: "${animalId}"} }) {
                 items {
@@ -53,7 +62,7 @@ export function Feedingplan(props) {
     return(
         <article className={Style.feedingplan}>
 
-            <header onClick={handleToggle} className={Style.header}>
+            <header id='feedingplan' onClick={wrapperFunction} className={Style.header}>
                 <h3>Foderplan</h3>
                 {!isFeedingplanActive ? <p>+</p> : <p>-</p>}
             </header>

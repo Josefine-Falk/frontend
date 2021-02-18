@@ -18,6 +18,15 @@ export function Factsheets(props) {
         setRegulationActive(false);
     };
 
+    const jumpTo = () => {
+        window.location.href = '#fact';
+    };
+
+    const wrapperFunction = () => {
+        handleToggle();
+        jumpTo();
+    };
+
 
 
     const query = `{
@@ -62,11 +71,11 @@ export function Factsheets(props) {
 
     return(
         <article className={Style.factsheet}>
-            <header onClick={handleToggle} className={Style.header}>
+            <header id="fact" onClick={wrapperFunction} className={Style.header}>
                 <h3>Fakta</h3>
                 {!isFactsheetActive ? <p>+</p> : <p>-</p>}
             </header>
-            
+
             {isFactsheetActive ? 
                 <div className={Style.factContainer}>
                     {factsheet.scientificName ? <div>
