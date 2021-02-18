@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouteMatch } from "react-router";
 import { Factsheets } from "../../Components/Factsheets/Factsheets";
 import { Feedingplan } from "../../Components/Feedingplan/FeedingPlan";
+import { Regulation } from "../../Components/Regulation/Regulation";
 import { doFetch } from "../../Helpers/doFetch";
 
 export function AnimalDetails() {
@@ -53,6 +54,7 @@ export function AnimalDetails() {
             </header>
             <Factsheets/>
             <Feedingplan/>
+            <Regulation/>
           </section> : <p>Loading</p>}
         </main>
     )

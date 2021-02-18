@@ -37,7 +37,7 @@ export function Feedingplan() {
         const getFeedingplan = async () => {
             let url = 'https://graphql.contentful.com/content/v1/spaces/6jz8r9ndp7ne/'
             let response = await doFetch(url, query)
-            setFeedingplan(response.data.animalCollection.items[0].feedingPlan)
+            setFeedingplan(response.data.animalsCollection.items[0].feedingPlan)
         }
         useEffect(() => {
             getFeedingplan()

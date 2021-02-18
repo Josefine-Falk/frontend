@@ -40,7 +40,7 @@ export function Regulation() {
         const getRegulation = async () => {
             let url = 'https://graphql.contentful.com/content/v1/spaces/6jz8r9ndp7ne/'
             let response = await doFetch(url, query)
-            setRegulation(response.data.animalCollection.items[0].regulation)
+            setRegulation(response.data.animalsCollection.items[0].regulation)
         }
         useEffect(() => {
             getRegulation()
