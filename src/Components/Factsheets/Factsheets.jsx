@@ -66,6 +66,7 @@ export function Factsheets(props) {
                 <h3>Fakta</h3>
                 {!isFactsheetActive ? <p>+</p> : <p>-</p>}
             </header>
+            
             {isFactsheetActive ? 
                 <div className={Style.factContainer}>
                     {factsheet.scientificName ? <div>
