@@ -16,7 +16,7 @@ export function Navigation() {
         <nav className={Style.pageNavigation}>
             <h2><a href="/Forside">Dyrepasser Intra</a></h2>
 
-            {animalId ? <p className={Style.backArrow} onClick={handleClick}>→</p> : <BurgerMenu />}
+            {animalId ? <a href='/Dyrene' className={Style.backArrow}>→</a> : <BurgerMenu />}
         </nav>
     )
 }
