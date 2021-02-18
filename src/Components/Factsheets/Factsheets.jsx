@@ -13,10 +13,6 @@ export function Factsheets() {
         setActive(!isActive);
     };
 
-    const handleFacesheetBtn = () => {
-        setClicked(!isClicked);
-    }
-
     const query = `{
         animalsCollection(where: { sys: { id_in: "${animalId}"} }) {
             items {
@@ -59,9 +55,9 @@ export function Factsheets() {
 
     return(
         <article onClick={handleToggle} className={Style.factsheet}>
-            <header className={Style.header} onClick={handleFacesheetBtn}>
+            <header className={Style.header}>
                 <h3>Fakta</h3>
-                {!isClicked ? <p>+</p> : <p>-</p>}
+                {!isActive ? <p>+</p> : <p>-</p>}
             </header>
             {isActive ? 
                 <div className={Style.factContainer}>

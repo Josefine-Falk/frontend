@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { doFetch } from "../../Helpers/doFetch";
+import Style from './Regulation.module.scss';
 
 export function Regulation() {
 
@@ -48,10 +49,14 @@ export function Regulation() {
 
         return(
 
-            <article onClick={handleToggle}>
-                <h3>Forskrifter</h3>
-                {isActive?
-                <div>
+            <article onClick={handleToggle} className={Style.regulation}>
+                <header className={Style.header}>
+                    <h3>Forskrifter</h3>
+                    {!isActive ? <p>+</p> : <p>-</p>}
+                </header>
+
+                {isActive ?
+                <div className={Style.regulationContainer}>
                     {regulation.regulationName ? <div>
                         <h4>Forskrifter</h4>
                         <p>{regulation.regulationName}</p>

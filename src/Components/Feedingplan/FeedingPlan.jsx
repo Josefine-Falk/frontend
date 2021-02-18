@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router"
 import { doFetch } from "../../Helpers/doFetch";
+import Style from './Feedingplan.module.scss';
 
 export function Feedingplan() {
 
@@ -44,10 +45,15 @@ export function Feedingplan() {
         }, [])
 
     return(
-        <article onClick={handleToggle}>
-            <h3>Foderplan</h3>
+        <article onClick={handleToggle} className={Style.feedingplan}>
+
+            <header className={Style.header}>
+                <h3>Foderplan</h3>
+                {!isActive ? <p>+</p> : <p>-</p>}
+            </header>
+            
             {isActive ? 
-            <div>
+            <div className={Style.feedingplanContainer}>
                 {feedingplan.feedingPlanName ? <div>
                         <h4>Dyre art</h4>
                         <p>{feedingplan.feedingPlanName}</p>
