@@ -34,13 +34,19 @@
 
         &:first-child {
             display: flex;
-            transform-origin: 0;
+            transform-origin: top left;
+            transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            display: flex;
+            transform-origin: center;
             transform: rotate(45deg);
         }
 
         &:last-child {
             display: flex;
-            transform-origin: 0;
+            transform-origin: bottom left;
             transform: rotate(-45deg);
         }
         
