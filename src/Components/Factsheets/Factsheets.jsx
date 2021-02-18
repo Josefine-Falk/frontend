@@ -54,8 +54,8 @@ export function Factsheets() {
       }, []);
 
     return(
-        <article onClick={handleToggle} className={Style.factsheet}>
-            <header className={Style.header}>
+        <article className={Style.factsheet}>
+            <header onClick={handleToggle} className={Style.header}>
                 <h3>Fakta</h3>
                 {!isActive ? <p>+</p> : <p>-</p>}
             </header>

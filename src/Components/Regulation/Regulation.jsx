@@ -49,8 +49,8 @@ export function Regulation() {
 
         return(
 
-            <article onClick={handleToggle} className={Style.regulation}>
-                <header className={Style.header}>
+            <article className={Style.regulation}>
+                <header onClick={handleToggle} className={Style.header}>
                     <h3>Forskrifter</h3>
                     {!isActive ? <p>+</p> : <p>-</p>}
                 </header>

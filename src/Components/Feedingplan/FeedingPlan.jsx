@@ -45,13 +45,13 @@ export function Feedingplan() {
         }, [])
 
     return(
-        <article onClick={handleToggle} className={Style.feedingplan}>
+        <article className={Style.feedingplan}>
 
-            <header className={Style.header}>
+            <header onClick={handleToggle} className={Style.header}>
                 <h3>Foderplan</h3>
                 {!isActive ? <p>+</p> : <p>-</p>}
             </header>
-            
+
             {isActive ? 
             <div className={Style.feedingplanContainer}>
                 {feedingplan.feedingPlanName ? <div>
