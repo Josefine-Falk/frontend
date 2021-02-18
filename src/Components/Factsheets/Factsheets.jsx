@@ -3,15 +3,22 @@ import { useParams } from "react-router";
 import { doFetch } from "../../Helpers/doFetch";
 import Style from './Factsheet.module.scss';
 
-export function Factsheets() {
+export function Factsheets(props) {
     let {animalId} = useParams();
     const [factsheet, setFactsheet] = useState([]);
-    const [isActive, setActive] = useState(false);
-    const [isClicked, setClicked] = useState(false);
+
+    let isFactsheetActive = props.isFactsheetActive;
+    let setFactsheetActive = props.setFactsheetActive;
+    let setFeedingplanActive = props.setFeedingplanActive;
+    let setRegulationActive = props.setRegulationActive;
 
     const handleToggle = () => {
-        setActive(!isActive);
+        setFactsheetActive(!isFactsheetActive);
+        setFeedingplanActive(false);
+        setRegulationActive(false);
     };
+
+
 
     const query = `{
         animalsCollection(where: { sys: { id_in: "${animalId}"} }) {
@@ -57,9 +64,9 @@ export function Factsheets() {
         <article className={Style.factsheet}>
             <header onClick={handleToggle} className={Style.header}>
                 <h3>Fakta</h3>
-                {!isActive ? <p>+</p> : <p>-</p>}
+                {!isFactsheetActive ? <p>+</p> : <p>-</p>}
             </header>
-            {isActive ? 
+            {isFactsheetActive ? 
                 <div className={Style.factContainer}>
                     {factsheet.scientificName ? <div>
                         <h4>Videnskabeligt navn</h4>

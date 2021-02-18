@@ -3,14 +3,20 @@ import { useParams } from "react-router"
 import { doFetch } from "../../Helpers/doFetch";
 import Style from './Feedingplan.module.scss';
 
-export function Feedingplan() {
+export function Feedingplan(props) {
 
         let {animalId} = useParams();
         const [feedingplan, setFeedingplan] = useState([])
-        const [isActive, setActive] = useState(false)
-    
+
+        let isFeedingplanActive = props.isFeedingplanActive;
+        let setFeedingplanActive = props.setFeedingplanActive;
+        let setFactsheetActive = props.setFactsheetActive;
+        let setRegulationActive = props.setRegulationActive;
+
         const handleToggle = () => {
-            setActive(!isActive)
+            setFeedingplanActive(!isFeedingplanActive)
+            setFactsheetActive(false);
+            setRegulationActive(false);
         }
 
         const query = `{
@@ -49,10 +55,10 @@ export function Feedingplan() {
 
             <header onClick={handleToggle} className={Style.header}>
                 <h3>Foderplan</h3>
-                {!isActive ? <p>+</p> : <p>-</p>}
+                {!isFeedingplanActive ? <p>+</p> : <p>-</p>}
             </header>
 
-            {isActive ? 
+            {isFeedingplanActive ? 
             <div className={Style.feedingplanContainer}>
                 {feedingplan.feedingPlanName ? <div>
                         <h4>Dyre art</h4>

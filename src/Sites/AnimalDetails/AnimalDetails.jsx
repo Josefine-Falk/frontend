@@ -11,6 +11,10 @@ export function AnimalDetails() {
     let { animalId } = useParams();
 
     const [animalDetails, setAnimalDetails] = useState([]);
+    const [isFactsheetActive, setFactsheetActive] = useState(false);
+    const [isFeedingplanActive, setFeedingplanActive] = useState(false);
+    const [isRegulationActive, setRegulationActive] = useState(false);
+
 
     const query = `{
         animalsCollection(where: {
@@ -53,9 +57,9 @@ export function AnimalDetails() {
               <h2>{animalDetails.name}</h2>
               <img src={animalDetails.image.url} />
             </header>
-            <Factsheets/>
-            <Feedingplan/>
-            <Regulation/>
+            <Factsheets isFactsheetActive={isFactsheetActive} setFactsheetActive={setFactsheetActive} setFeedingplanActive={setFeedingplanActive} setRegulationActive={setRegulationActive} />
+            <Feedingplan isFeedingplanActive={isFeedingplanActive} setFeedingplanActive={setFeedingplanActive} setFactsheetActive={setFactsheetActive} setRegulationActive={setRegulationActive} />
+            <Regulation isRegulationActive={isRegulationActive} setRegulationActive={setRegulationActive} setFactsheetActive={setFactsheetActive} setFeedingplanActive={setFeedingplanActive} />
           </section> : <p>Loading</p>}
         </main>
     )
