@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouteMatch } from "react-router";
 import { Factsheets } from "../../Components/Factsheets/Factsheets";
+import { Feedingplan } from "../../Components/Feedingplan/FeedingPlan";
 import { doFetch } from "../../Helpers/doFetch";
 
 export function AnimalDetails() {
@@ -51,6 +52,7 @@ export function AnimalDetails() {
               <img src={animalDetails.image.url} />
             </header>
             <Factsheets/>
+            <Feedingplan/>
           </section> : <p>Loading</p>}
         </main>
     )
