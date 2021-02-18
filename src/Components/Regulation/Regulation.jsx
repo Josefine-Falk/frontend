@@ -3,14 +3,20 @@ import { useParams } from "react-router";
 import { doFetch } from "../../Helpers/doFetch";
 import Style from './Regulation.module.scss';
 
-export function Regulation() {
+export function Regulation(props) {
 
     let {animalId} = useParams();
         const [regulation, setRegulation] = useState([])
-        const [isActive, setActive] = useState(false)
-    
+
+        let isRegulationActive = props.isRegulationActive;
+        let setRegulationActive = props.setRegulationActive;
+        let setFactsheetActive = props.setFactsheetActive;
+        let setFeedingplanActive = props.setFeedingplanActive;
+
         const handleToggle = () => {
-            setActive(!isActive)
+            setRegulationActive(!isRegulationActive)
+            setFactsheetActive(false);
+            setFeedingplanActive(false);
         }
 
         const query = `{
@@ -51,10 +57,10 @@ export function Regulation() {
             <article className={Style.regulation}>
                 <header onClick={handleToggle} className={Style.header}>
                     <h3>Forskrifter</h3>
-                    {!isActive ? <p>+</p> : <p>-</p>}
+                    {!isRegulationActive ? <p>+</p> : <p>-</p>}
                 </header>
 
-                {isActive ?
+                {isRegulationActive ?
                 <div className={Style.regulationContainer}>
                     {regulation.regulationName ? <div>
                         <h4>Forskrifter</h4>
