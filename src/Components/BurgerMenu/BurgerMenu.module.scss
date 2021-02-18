@@ -76,21 +76,21 @@
         transition: .2s ease-in-out;
 
         &:first-child {
-            top: 0;
+            top: 50%;
             left: 0;
-            transform: rotate(45deg);
+            transform: translateY(-50%) rotate(45deg);
         }
 
         &:nth-child(2) {
-            top: 0;
+            top: 50%;
             left: 0;
-            transform: rotate(45deg);
+            transform: translateY(-50%) rotate(45deg);
         }
 
         &:last-child {
-            bottom: 0;
+            top: 50%;
             left: 0;
-            transform: rotate(-45deg);
+            transform: translateY(-50%) rotate(-45deg);
         }
         
     }
