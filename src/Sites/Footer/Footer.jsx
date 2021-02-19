@@ -9,7 +9,7 @@ export function Footer() {
                 <h2>Kontakt Louise Møller</h2>
                 <div>
                     <p><strong>Telefon:</strong></p>
-                    <a href="tel:+45 11 22 33 44">+45 11 22 33 44</a>
+                    <a href="tel:+45 25 26 64 67">+45 25 26 64 67</a>
                 </div>
                 <div>
                     <p><strong>E-mail:</strong></p><a href="mailto:lomo@techcollege.dk">lomo@techcollege.dk</a>
