@@ -1,3 +1,5 @@
+$laptop: 1200px;
+
 #container {
     min-height: 85vh;
     background-image: url("/Assets/img/amazon-papegoeje.jpg");
@@ -8,11 +10,26 @@
     position: relative;
     color: #fff;
 
+    @media (min-width: $laptop) {
+        width: 100vw;
+        background-color: rgba(73,116,69,1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-size: 550px;
+        background-position-x: center;
+    }
+
     div {
         background-image: linear-gradient(0deg, rgba(73,116,69,1) 50%, rgba(255,0,0,0) 100%);
         position: absolute;
         bottom: 0;
         padding: 10rem 0 2rem 0;
+
+        @media (min-width: $laptop) {
+            width: 550px;
+        }
 
         img {
             max-width: 70%; 

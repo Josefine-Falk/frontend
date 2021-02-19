@@ -1,12 +1,25 @@
+$laptop: 1200px;
+
 .mainContainer {
     width: 100%;
     height: fit-content;
+
+    @media (min-width: $laptop) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(73,116,69,1);
+    }
 
     article {
         width: 100%;
         height: 25vh;
         overflow: hidden;
         position: relative;
+
+        @media (min-width: $laptop) {
+            width: 35vw;
+        }
 
         img {
             position: absolute;
