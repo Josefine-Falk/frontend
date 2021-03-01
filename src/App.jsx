@@ -5,6 +5,7 @@ import { AnimalDetails } from './Sites/AnimalDetails/AnimalDetails';
 import { AnimalList } from './Sites/AnimalList/AnimalList';
 import { Frontpage } from './Sites/Frontpage/Frontpage';
 import { Footer } from './Sites/Footer/Footer'
+import { General } from './Sites/General/General';
 
 function App() {
 
@@ -28,8 +29,9 @@ function App() {
           <AnimalDetails />
         </Route>
 
-        <Route exact path="/Kontakt">
+        <Route exact path="/Generelt">
           <Navigation />
+          <General />
         </Route>
 
         <Route exact path="/">
