@@ -39,7 +39,7 @@ export function TechnicalTerms(props) {
     const getTechnicalTerms = async () => {
         let url = "https://graphql.contentful.com/content/v1/spaces/6jz8r9ndp7ne/";
         let response = await doFetch(url, query);
-        setTechnicalTerms(response.data.technicalTermsCollection.items[0]);
+        setTechnicalTerms(response.data.technicalTermsCollection.items);
     };
 
     useEffect(() => {
@@ -48,11 +48,44 @@ export function TechnicalTerms(props) {
 
 
     return (
-        <article>
-            <header id="technicalTerms" onClick={wrapperFunction}>
+        <article className={Style.technical}>
+            <header id="technicalTerms" className={Style.header} onClick={wrapperFunction}>
                 <h3>Ordbog</h3>
                 {!isTechnicalTermsActive ? <p>+</p> : <p>-</p>}
             </header>
+            {isTechnicalTermsActive ?
+            <div className={Style.technicalContainer}>
+
+            {technicalTerms.map((item, index) => {
+                return (
+                    <div key={index} className={Style.item}>
+                        {item.technicalTerm ? 
+                            <div>
+                                <h4>Fagterm</h4>
+                                <p>{item.technicalTerm}</p>
+                            </div> 
+                        : null}
+
+                        {item.description ? 
+                            <div>
+                                <h4>Beskrivelse</h4>
+                                <p>{item.description}</p>
+                            </div> 
+                        : null}
+                        
+                        {item.extraInformation ? 
+                            <div>
+                                <h4>Ekstra information</h4>
+                                <p>{item.extraInformation}</p>
+                            </div> 
+                        : null}
+
+                    </div>
+                )
+            })}
+
+            </div>:null} 
+            
 
         </article>
     )

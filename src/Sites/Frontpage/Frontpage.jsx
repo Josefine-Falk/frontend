@@ -7,7 +7,7 @@ export function Frontpage() {
         <main id={style.container}>
             <div>
                 <img src={logo} alt=""/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique augue eget mi iaculis aliquet.</p>
+                <p>Dette er en side, som skal hjælpe de studerende med at finde informationer om dyrende i stalden.</p>
                 <a href="/Dyrene">Se dyr</a>
             </div>
         </main>

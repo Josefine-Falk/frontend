@@ -46,12 +46,34 @@ export function Workflow(props) {
     }, []);
 
     return (
-        <article>
-            <header id="workflow" onClick={wrapperFunction}>
+        <article className={Style.workflow}>
+            <header id="workflow" className={Style.header} onClick={wrapperFunction}>
                 <h3>General arbejdsgang</h3>
                 {!isWorkflowActive ? <p>+</p> : <p>-</p>}
             </header>
+            {isWorkflowActive ? 
+            <div className={Style.workflowContainer}>
+                
+                {workflow.workflow ?
+                <div>
+                    <h4>Arbejdsgang</h4>
+                    <ul>
+                        {workflow.workflow.map(item => {
+                            return (
+                                <li>{item}</li>
+                            )
+                        })}
+                    </ul>                   
+                </div> : null}
 
+                {workflow.importantInformation ? 
+                <div>
+                    <h4>Vigtig information</h4>
+                    <p>{workflow.importantInformation}</p>
+                </div> : null}
+
+            </div> : null} 
+            
         </article>
     )
 }

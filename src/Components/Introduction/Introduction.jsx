@@ -47,11 +47,47 @@ export function Introduction(props) {
     }, []);
 
     return (
-        <article>
-            <header id="introduction" onClick={wrapperFunction}>
+        <article className={Style.introduction}>
+            <header id="introduction" className={Style.header} onClick={wrapperFunction}>
                 <h3>Introduktion</h3>
                 {!isIntroductionActive ? <p>+</p> : <p>-</p>}
             </header>
+            
+            {isIntroductionActive ?
+            <div className={Style.infoContainer}>
+
+                {introduction.siteInformation ?
+                <div>
+                    <h4>Information</h4>
+                    <ul>
+                        {introduction.siteInformation.map(item => {
+                            return (
+                                <li>{item}</li>
+                            )
+                        })}
+                    </ul>
+                </div> : null}
+
+                {introduction.beforeWorkChecklist ?
+                <div>
+                    <h4>Inden start på pasning</h4>
+                    <ul>
+                        {introduction.beforeWorkChecklist.map(item => {
+                            return (
+                                <li>{item}</li>
+                            )
+                        })}
+                    </ul>
+                </div> : null}
+
+                {introduction.extraInformation ?
+                <div>
+                    <h4>Ekstra information</h4>
+                    <p>{introduction.extraInformation}</p>
+                </div> : null}
+
+
+            </div> : null} 
 
         </article>
     )
