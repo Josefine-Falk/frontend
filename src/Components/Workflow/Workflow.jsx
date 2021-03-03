@@ -58,9 +58,9 @@ export function Workflow(props) {
                 <div>
                     <h4>Arbejdsgang</h4>
                     <ul>
-                        {workflow.workflow.map(item => {
+                        {workflow.workflow.map((item, index) => {
                             return (
-                                <li>{item}</li>
+                                <li key={index}>{item}</li>
                             )
                         })}
                     </ul>                   

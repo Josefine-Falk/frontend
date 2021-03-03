@@ -60,9 +60,9 @@ export function Introduction(props) {
                 <div>
                     <h4>Information</h4>
                     <ul>
-                        {introduction.siteInformation.map(item => {
+                        {introduction.siteInformation.map((item, index) => {
                             return (
-                                <li>{item}</li>
+                                <li key={index}>{item}</li>
                             )
                         })}
                     </ul>
@@ -72,9 +72,9 @@ export function Introduction(props) {
                 <div>
                     <h4>Inden start på pasning</h4>
                     <ul>
-                        {introduction.beforeWorkChecklist.map(item => {
+                        {introduction.beforeWorkChecklist.map((item, index) => {
                             return (
-                                <li>{item}</li>
+                                <li key={index}>{item}</li>
                             )
                         })}
                     </ul>
