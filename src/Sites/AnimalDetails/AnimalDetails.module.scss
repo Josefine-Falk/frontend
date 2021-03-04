@@ -35,5 +35,18 @@
                 height: 125%;
             }
         }
+
+        article {
+
+            > div {
+
+                > div {
+
+                    > p {
+                        white-space: pre-wrap;
+                    }
+                }
+            }
+        }
     }
 }
